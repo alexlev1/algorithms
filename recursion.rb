@@ -19,6 +19,17 @@ def loop_one(x)
   end
 end
 
+# Sum of array elements
+def sum(arr)
+  if arr.empty?
+    0
+  else
+    x = arr[0]
+    arr.delete_at(0)
+    x + sum(arr)
+  end
+end
+
 # Flatten Array with Recursion
 class Array
   def new_flatten(arr2)
