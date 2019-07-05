@@ -24,11 +24,29 @@ def sum(arr)
   if arr.empty?
     0
   else
-    x = arr[0]
-    arr.delete_at(0)
-    x + sum(arr)
+    head, *tail = arr
+    head + sum(tail)
   end
 end
+
+# Recursion Reduce
+def recur_reduce(array, acc, f)
+  if array.empty?
+    acc
+  else
+    head, *tail = array
+    recur_reduce(tail, f.(acc, head), f)
+  end
+end
+
+array = [1, 2, 3, 10, 4, 5]
+
+# Count elements in array
+p recur_reduce(array, 0, ->(r, elem) { r + 1 } )
+
+# Max element in array
+p recur_reduce(array, 0, ->(r, elem) { r > elem ? r : elem })
+
 
 # Flatten Array with Recursion
 class Array
