@@ -1,7 +1,4 @@
 # Sorting algorithm - slow O(n**2)
-
-arr = [6, 3, 2, 10, 5, 22, 41, 7, 12, 23, 1]
-
 def find_smallest(arr)
   smallest = arr[0]
   smallest_index = 0
@@ -27,4 +24,12 @@ def selection_sort(arr)
   new_arr
 end
 
-p selection_sort(arr)
+arraу = []
+20000.times { |n| arraу << n }
+arraу.shuffle!
+
+time1 = Time.now.to_i
+p selection_sort(arraу)
+time2 = Time.now.to_i
+
+p time2 - time1 # 19 seconds for array with 20000 elements
