@@ -19,8 +19,7 @@ def search_by_graph(data, name)
       end
     end
   end
-
-  return 'value not found'
+  return 'value not found!'
 end
 
 # Graph for test
@@ -36,4 +35,3 @@ graph['sasha'] = []
 
 # Searching
 p search_by_graph(graph, 'me')
-
