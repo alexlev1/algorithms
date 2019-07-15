@@ -22,6 +22,8 @@ def search_value(arr, item)
       count += 1
     end
   end
+
+  return 'Not value'
 end
 
-p search_value(arr, 10)
+p search_value(arr, 20)
